@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dawn M. Knapper, LCSW — Psychotherapy in New York</title>
+<meta name="description" content="Dawn M. Knapper is a Licensed Clinical Social Worker (LCSW) offering compassionate psychotherapy rooted in the belief that healing begins with a conversation.">
+<meta name="author" content="Dawn M. Knapper, LCSW">
+<meta property="og:title" content="Dawn M. Knapper, LCSW — Psychotherapy">
+<meta property="og:description" content="Empowering lives through talk therapy. Healing begins with a conversation.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dawnknapper.info">
+<meta name="theme-color" content="#f4efe6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Great+Vibes&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4efe6;
+    --bg-alt: #ebe4d6;
+    --ink: #2b2a26;
+    --ink-soft: #56544d;
+    --accent: #6b7a5a;
+    --accent-deep: #4a5740;
+    --rule: #c8bfae;
+    --paper: #faf6ee;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .serif {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 300;
+  }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 32px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--ink);
+    transition: color 0.6s ease;
+  }
+
+  /* When scrolled over dark sections, lighten the nav links for readability */
+  nav.nav-light {
+    color: var(--paper);
+  }
+
+  /* The name mark gets its own softer treatment — quieter than the nav links */
+  nav .mark {
+    color: var(--ink-soft);
+    opacity: 0.7;
+    transition: color 0.6s ease, opacity 0.6s ease;
+  }
+
+  nav.nav-light .mark {
+    color: rgba(250, 246, 238, 0.55);
+  }
+
+  nav .mark {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 0.9;
+    letter-spacing: 0.01em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  nav .mark .name {
+    display: block;
+    white-space: nowrap;
+  }
+
+  nav .mark .suffix {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    margin-left: 4px;
+    opacity: 0.75;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  nav .mark .suffix::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.5;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+
+  nav a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: opacity 0.3s ease;
+  }
+
+  nav a:hover { opacity: 0.6; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    min-height: 100vh;
+    padding: 140px 48px 80px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 100px;
+    right: 48px;
+    font-family: 'Fraunces', serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .hero-meta {
+    position: absolute;
+    top: 120px;
+    right: 48px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-align: right;
+    line-height: 2;
+  }
+
+  .hero-text h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(52px, 7vw, 112px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+  }
+
+  .hero-text h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent-deep);
+  }
+
+  .hero-text .credentials {
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .hero-text .credentials::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--ink-soft);
+    display: inline-block;
+  }
+
+  .hero-text .tagline {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: 500px;
+    margin-bottom: 48px;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+
+  .hero-cta:hover {
+    background: var(--accent-deep);
+    gap: 20px;
+  }
+
+  .hero-cta .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  /* Portrait */
+  .hero-portrait {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 4/5;
+    background-color: var(--bg-alt);
+    background-image: url('assets/portrait.png');
+    background-size: cover;
+    background-position: center 25%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: 0 30px 80px rgba(43, 42, 38, 0.12);
+    justify-self: start;
+  }
+
+  .hero-portrait::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(244, 239, 230, 0.15) 100%);
+    pointer-events: none;
+  }
+
+  .portrait-caption {
+    position: absolute;
+    left: -60px;
+    bottom: 40px;
+    transform: rotate(-90deg);
+    transform-origin: left bottom;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- SECTION DIVIDER ---------- */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 48px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: var(--ink-soft);
+  }
+
+  .section-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--accent-deep);
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about {
+    padding: 140px 48px;
+    background: var(--paper);
+    position: relative;
+  }
+
+  .about-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 100px;
+  }
+
+  .about h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(36px, 4vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    max-width: 400px;
+  }
+
+  .about h2 em {
+    font-style: italic;
+    color: var(--accent-deep);
+  }
+
+  .about-body p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    color: var(--ink-soft);
+    max-width: 620px;
+  }
+
+  .about-body p:first-child::first-letter {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 72px;
+    float: left;
+    line-height: 0.85;
+    margin: 8px 12px 0 0;
+    color: var(--accent-deep);
+  }
+
+  .about-body .signature {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink);
+    margin-top: 40px;
+  }
+
+  /* ---------- APPROACH ---------- */
+  .approach {
+    padding: 140px 48px;
+    background: var(--bg);
+  }
+
+  .approach-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .approach h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(44px, 5vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    max-width: 800px;
+    margin-bottom: 80px;
+  }
+
+  .approach h2 em {
+    font-style: italic;
+    color: var(--accent-deep);
+  }
+
+  .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    border-top: 1px solid var(--rule);
+    padding-top: 60px;
+  }
+
+  .approach-item {
+    position: relative;
+  }
+
+  .approach-item .num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--accent-deep);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .approach-item h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+
+  .approach-item p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- QUOTE BAND ---------- */
+  .quote {
+    padding: 160px 48px;
+    background: var(--accent-deep);
+    color: var(--paper);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quote::before,
+  .quote::after {
+    content: '"';
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 400px;
+    line-height: 1;
+    position: absolute;
+    opacity: 0.08;
+    color: var(--paper);
+  }
+
+  .quote::before {
+    top: -80px;
+    left: 40px;
+  }
+
+  .quote::after {
+    bottom: -260px;
+    right: 40px;
+  }
+
+  .quote blockquote {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.3;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .quote cite {
+    display: block;
+    margin-top: 40px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  /* ---------- CREDENTIALS ---------- */
+  .credentials-section {
+    padding: 140px 48px;
+    background: var(--paper);
+  }
+
+  .credentials-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .credentials-section h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(36px, 4vw, 56px);
+    margin-bottom: 60px;
+    color: var(--ink);
+  }
+
+  .cred-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 80px;
+    border-top: 1px solid var(--rule);
+    padding-top: 40px;
+  }
+
+  .cred-item {
+    display: flex;
+    gap: 24px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .cred-item .label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    min-width: 100px;
+    padding-top: 6px;
+  }
+
+  .cred-item .value {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+
+  .cred-item .value small {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    letter-spacing: 0;
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact {
+    padding: 160px 48px 80px;
+    background: var(--ink);
+    color: var(--paper);
+    position: relative;
+  }
+
+  .contact-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .contact .section-label {
+    color: rgba(250, 246, 238, 0.5);
+  }
+
+  .contact .section-label::before {
+    background: rgba(250, 246, 238, 0.3);
+  }
+
+  .contact h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(56px, 8vw, 128px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 60px;
+    max-width: 900px;
+  }
+
+  .contact h2 em {
+    font-style: italic;
+    color: #a8b594;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+    align-items: end;
+    border-top: 1px solid rgba(250, 246, 238, 0.2);
+    padding-top: 60px;
+  }
+
+  .contact-email {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(28px, 3vw, 44px);
+    color: var(--paper);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(250, 246, 238, 0.3);
+    padding-bottom: 8px;
+    display: inline-block;
+    transition: border-color 0.3s ease;
+  }
+
+  .contact-email:hover {
+    border-color: var(--paper);
+  }
+
+  .contact-meta {
+    font-size: 13px;
+    line-height: 2;
+    color: rgba(250, 246, 238, 0.7);
+    letter-spacing: 0.05em;
+  }
+
+  .contact-meta strong {
+    display: block;
+    color: var(--paper);
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    padding: 40px 48px;
+    background: var(--ink);
+    color: rgba(250, 246, 238, 0.4);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(250, 246, 238, 0.1);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px) {
+    nav { padding: 20px 24px; }
+    nav ul { gap: 20px; }
+    nav a { font-size: 11px; }
+    nav .mark { font-size: 34px; }
+    nav .mark .suffix { font-size: 8px; letter-spacing: 0.25em; }
+    nav .mark .suffix::before { width: 14px; }
+
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 120px 24px 60px;
+      gap: 48px;
+    }
+
+    .hero-meta { display: none; }
+
+    .about, .approach, .credentials-section, .contact {
+      padding: 80px 24px;
+    }
+
+    .about-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .approach-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .cred-list {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    footer {
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+    }
+  }
+
+  /* ---------- SUBTLE ENTRANCE ---------- */
+  @keyframes riseUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-text > * {
+    animation: riseUp 1s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-text .credentials { animation-delay: 0.1s; }
+  .hero-text h1 { animation-delay: 0.3s; }
+  .hero-text .tagline { animation-delay: 0.6s; }
+  .hero-text .hero-cta { animation-delay: 0.9s; }
+
+  .hero-portrait {
+    animation: riseUp 1.2s ease 0.4s forwards;
+    opacity: 0;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="mark">
+    <span class="name">Dawn Knapper</span>
+    <span class="suffix">LCSW · Psychotherapy</span>
+  </div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-meta">
+    Licensed Clinical Social Worker<br>
+    New York — Est. 2011
+  </div>
+
+  <div class="hero-text">
+    <div class="credentials">LCSW &nbsp;·&nbsp; Psychotherapist</div>
+    <h1>Healing begins<br>with a <em>conversation.</em></h1>
+    <p class="tagline">
+      A thoughtful, compassionate practice rooted in the belief that meaningful change starts with being heard.
+    </p>
+    <a href="#contact" class="hero-cta">
+      Begin the conversation
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+  <div class="hero-portrait">
+    <div class="portrait-caption">Dawn M. Knapper, LCSW</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div>
+      <div class="section-label"><span class="section-num">01</span> About</div>
+      <h2>A practice built on <em>presence</em>, patience, and trust.</h2>
+    </div>
+    <div class="about-body">
+      <p>
+        Dawn is a Licensed Clinical Social Worker based in New York, bringing over a decade of clinical experience to her work with individuals navigating life's most challenging moments. Her approach is grounded in a bio-psychosocial perspective — one that honors the whole person, not just the presenting concern.
+      </p>
+      <p>
+        Whether working through anxiety, processing grief, untangling relationships, or finding clarity amid change, Dawn creates a space where her clients feel safe enough to be honest, and steady enough to grow. The work is collaborative, unhurried, and always tailored to the person in the room.
+      </p>
+      <p>
+        [Placeholder — add a personal paragraph here about Dawn's journey into social work, what drew her to this field, or the populations she most loves working with.]
+      </p>
+      <div class="signature">— D.K.</div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach" id="approach">
+  <div class="approach-inner">
+    <div class="section-label"><span class="section-num">02</span> Approach</div>
+    <h2>Therapy that meets you <em>where you are</em>.</h2>
+
+    <div class="approach-grid">
+      <div class="approach-item">
+        <span class="num">i.</span>
+        <h3>Assessment &amp; Understanding</h3>
+        <p>Every client is met with a careful, full-picture evaluation — looking at the biological, psychological, and social threads that shape their experience.</p>
+      </div>
+      <div class="approach-item">
+        <span class="num">ii.</span>
+        <h3>Psychotherapy &amp; Counseling</h3>
+        <p>Evidence-based therapeutic work focused on interpersonal dynamics, internal patterns, and the practical matters of living a meaningful life.</p>
+      </div>
+      <div class="approach-item">
+        <span class="num">iii.</span>
+        <h3>Advocacy &amp; Support</h3>
+        <p>Client-centered guidance that extends beyond the session — consultation, prevention, and the kind of steady partnership that real change requires.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote">
+  <blockquote>
+    The curious paradox is that when I accept myself just as I am, then I can change.
+    <cite>— Carl R. Rogers</cite>
+  </blockquote>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="credentials-section" id="credentials">
+  <div class="credentials-inner">
+    <div class="section-label"><span class="section-num">03</span> Credentials</div>
+    <h2>Professional <em>qualifications.</em></h2>
+
+    <div class="cred-list">
+      <div class="cred-item">
+        <div class="label">License</div>
+        <div class="value">
+          LCSW — New York
+          <small>License No. 083753</small>
+        </div>
+      </div>
+      <div class="cred-item">
+        <div class="label">NPI</div>
+        <div class="value">
+          1881961753
+          <small>National Provider Identifier, Active</small>
+        </div>
+      </div>
+      <div class="cred-item">
+        <div class="label">Education</div>
+        <div class="value">
+          Master of Social Work
+          <small>Accredited school of social work</small>
+        </div>
+      </div>
+      <div class="cred-item">
+        <div class="label">Experience</div>
+        <div class="value">
+          Clinical Practice since 2011
+          <small>Post-masters supervised clinical experience</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="section-label"><span class="section-num">04</span> Contact</div>
+    <h2>Let's begin a <em>conversation.</em></h2>
+
+    <div class="contact-grid">
+      <div>
+        <a href="mailto:hello@example.com" class="contact-email">hello@example.com</a>
+      </div>
+      <div class="contact-meta">
+        <strong>Location</strong>
+        New York<br>
+        Telehealth available<br><br>
+        <strong>Response</strong>
+        Within 1–2 business days
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Dawn M. Knapper, LCSW</div>
+  <div>Designed with care</div>
+</footer>
+
+</body>
+<script>
+  // Toggle nav color when scrolling over dark sections for readability
+  const nav = document.querySelector('nav');
+  const darkSections = document.querySelectorAll('.quote, .contact');
+
+  function updateNavColor() {
+    const navHeight = nav.offsetHeight;
+    const navMidpoint = navHeight / 2;
+    let isOverDark = false;
+
+    darkSections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= navMidpoint && rect.bottom >= navMidpoint) {
+        isOverDark = true;
+      }
+    });
+
+    nav.classList.toggle('nav-light', isOverDark);
+  }
+
+  window.addEventListener('scroll', updateNavColor, { passive: true });
+  window.addEventListener('resize', updateNavColor);
+  updateNavColor();
+</script>
+</html>
